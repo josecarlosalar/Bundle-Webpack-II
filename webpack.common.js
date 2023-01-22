@@ -1,12 +1,10 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
 module.exports = {
     context: path.resolve(__dirname, "./src"),
     entry: {
-        app: "./index.tsx",
-        vendorStyles: ["../node_modules/bootstrap/dist/css/bootstrap.css"],
+        app: "./index.tsx"
     },
     output: {
         filename: "[name].[chunkhash].js",
@@ -26,22 +24,10 @@ module.exports = {
                 type: 'asset/resource'
             },
             {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
-            },
-            {
-                test: /\.css$/,
-                use: ["style-loader", "css-loader"],
-            },
-            {
                 test: /\.html$/,
                 loader: "html-loader",
             },
         ],
-    },
-    devServer: {
-        static: path.join(__dirname, "./src"),
     },
     plugins: [
         //Generate index.html in /dist => https://github.com/ampedandwired/html-webpack-plugin
@@ -50,10 +36,6 @@ module.exports = {
             template: "./index.html", //Name of template in ./src
             scriptLoading: "blocking", // Just use the blocking approach (no modern defer or module)
 
-        }),
-        new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css",
         })
     ]
 };
