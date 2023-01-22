@@ -11,7 +11,8 @@
         "start:prod": "webpack serve --config webpack.prod.js",
         "build:dev": "rimraf dist && webpack --config webpack.dev.js",
         "build:prod": "rimraf dist && webpack --config webpack.prod.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build:perf": "npm run type-check && webpack --config webpack.perf.js"
+
     },
     "repository": {
         "type": "git",
@@ -47,6 +48,7 @@
         "style-loader": "^3.3.1",
         "typescript": "^4.9.4",
         "webpack": "^5.75.0",
+        "webpack-bundle-analyzer": "^4.7.0",
         "webpack-cli": "^5.0.1",
         "webpack-dev-server": "^4.11.1",
         "webpack-merge": "^5.8.0"
