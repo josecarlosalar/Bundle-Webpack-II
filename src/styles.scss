@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+$color: #242415;
+#root {
+    background-color: $color;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
 h1 {
-    color: indianred;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: #D9DA00;
+    font-size: 38px;
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    -webkit-font-smoothing: antialiased;
 }
