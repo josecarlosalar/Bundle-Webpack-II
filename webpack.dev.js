@@ -1,9 +1,15 @@
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
 const path = require("path");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = merge(common, {
     mode: "development",
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000,
+    },
     module: {
         rules: [{
             test: /\.scss$/,
@@ -24,6 +30,11 @@ module.exports = merge(common, {
             ],
         }, ],
     },
+    plugins: [
+        new Dotenv({
+            path: './dev.env',
+        }),
+    ],
     devtool: "eval-source-map",
     devServer: {
         port: 8080,
