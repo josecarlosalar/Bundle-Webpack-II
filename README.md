@@ -1,4 +1,4 @@
-## Bundle Webpack - Lab Opcional - Lemoncode
+## Bundle Webpack II
 
 Bundle creado desde cero en Webpack incluyendo las siguientes caracteristicas:
 
